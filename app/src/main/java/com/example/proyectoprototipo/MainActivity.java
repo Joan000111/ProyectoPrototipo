@@ -23,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent = new Intent(
                         getApplicationContext(),
-                        MainActivity.class
+                        busqueda.class
                 );
                 startActivity(intent);
             }
