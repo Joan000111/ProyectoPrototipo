@@ -67,15 +67,7 @@
                         app:layout_constraintVertical_bias="0.046"
                         app:srcCompat="@android:drawable/star_off" />
 
-                    <SearchView
-                        android:id="@+id/barrabusqueda"
-                        android:layout_width="326dp"
-                        android:layout_height="62dp"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent"
-                        app:layout_constraintVertical_bias="0.75" />
+                    <!--hay q agregar la barra de busqueda pq daba error-->
 
                     <ImageButton
                         android:id="@+id/bmicrofono"

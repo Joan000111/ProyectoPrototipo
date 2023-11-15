@@ -136,8 +136,11 @@
                 android:text="Bienvenid@!"
                 android:textColor="@color/material_dynamic_tertiary10"
                 android:textSize="34sp"
-                tools:layout_editor_absoluteX="93dp"
-                tools:layout_editor_absoluteY="82dp" />
+                app:layout_constraintBottom_toBottomOf="@+id/view"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/view"
+                app:layout_constraintTop_toTopOf="@+id/view"
+                tools:ignore="MissingConstraints" />
 
             <Button
                 android:id="@+id/bregistrarse"
