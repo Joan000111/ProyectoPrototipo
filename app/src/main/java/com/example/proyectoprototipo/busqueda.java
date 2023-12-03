@@ -22,7 +22,7 @@ import java.util.Locale;
 public class busqueda extends AppCompatActivity {
 
     ImageButton volverlogin;
-    Button publicacion;
+    Button publicacion, buscar;
 
     //lo del micro
     ImageButton microfono;
@@ -103,6 +103,15 @@ public class busqueda extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getApplicationContext(), publicar.class);
+                startActivity(intent);
+            }
+        });
+
+        buscar = findViewById(R.id.bbuscar);
+        buscar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), resultado.class);
                 startActivity(intent);
             }
         });
