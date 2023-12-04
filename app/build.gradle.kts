@@ -38,6 +38,8 @@ dependencies {
     implementation("com.google.firebase:firebase-database:20.3.0")
     testImplementation("junit:junit:4.13.2")
 
+    implementation("com.google.android.gms:play-services-maps:18.1.0")
+
     //card view
     implementation ("androidx.cardview:cardview:1.0.0")
 

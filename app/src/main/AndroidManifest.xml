@@ -3,6 +3,11 @@
     xmlns:tools="http://schemas.android.com/tools">
     <!-- permisos de internet -->
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission
+        android:name="android.permission.ACCESS_FINE_LOCATION"
+        tools:ignore="CoarseFineLocation" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
 
     <application
         android:allowBackup="true"
@@ -14,6 +19,15 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ProyectoPrototipo"
         tools:targetApi="31">
+
+        <!--tambien hay que añadir el  meta data tambien-->
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyBHIkMtmLBKkrUR1SdXNTJk-EakJDCXqJk"/>
+
+        <activity
+            android:name=".mapa"
+            android:exported="false" />
         <activity
             android:name=".resultado"
             android:exported="false" />

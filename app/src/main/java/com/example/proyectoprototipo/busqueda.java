@@ -2,6 +2,7 @@ package com.example.proyectoprototipo;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.speech.RecognizerIntent;
@@ -24,8 +25,8 @@ public class busqueda extends AppCompatActivity {
     ImageButton volverlogin;
     Button publicacion, buscar;
 
-    //lo del micro
-    ImageButton microfono;
+    //lo del micro Y MAPA
+    ImageButton microfono, estrella;
     SearchView bbusqueda;
 
     //info de la sesion
@@ -52,6 +53,7 @@ public class busqueda extends AppCompatActivity {
         }
     }*/
 
+    @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -61,6 +63,33 @@ public class busqueda extends AppCompatActivity {
         nombreusuario = findViewById(R.id.usuarioactual);
         cerrar = findViewById(R.id.bcerrarsesion);
         user = auth.getCurrentUser();
+
+        estrella = findViewById(R.id.imestrella);
+        estrella.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(
+                        getApplicationContext(),
+                        mapa.class
+                );
+
+            String direccion = "-34.78127778,-71.03747222";
+
+            String[] direc = direccion.split(",");
+            String longitude = direc[0];
+            String latitude = direc[1];
+
+            double primeralong = Double.parseDouble(longitude.toString());
+            double primeralati = Double.parseDouble(latitude.toString());
+
+            intent.putExtra("lo1", primeralong);
+            intent.putExtra("la1", primeralati);
+            startActivity(intent);
+
+            }
+
+        });
+
         if(user == null){
             Intent intent = new Intent(
                     getApplicationContext(),
