@@ -57,9 +57,6 @@ public class Libro {
 
     @Override
     public String toString() {
-        return "ID{" +
-                "autor='" + autor + '\'' +
-                ", nombre='" + nombre + '\'' +
-                '}';
+        return nombre + " de " + autor;
     }
 }

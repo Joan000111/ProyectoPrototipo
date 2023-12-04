@@ -46,13 +46,14 @@ public class publicar extends AppCompatActivity {
         finalizado.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Libro libro = new Libro();
-                libro.setID(UUID.randomUUID().toString());
-                libro.setNombre(eTNombre.getText().toString());
-                libro.setAutor(eTAutor.getText().toString());
-                databaseReference.child("Libro").child(libro.getID()).setValue(libro);
-
                 Intent intent = new Intent(getApplicationContext(), busqueda.class);
+
+                String nlibro = eTNombre.toString();
+                String nautor = eTAutor.toString();
+
+                intent.putExtra("nombrelibro", nlibro);
+                intent.putExtra("nombreautor", nautor);
+
                 startActivity(intent);
             }
         });

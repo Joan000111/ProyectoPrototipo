@@ -46,7 +46,6 @@ public class mapa extends AppCompatActivity implements OnMapReadyCallback{
                 startActivity(intent);
             }
         });
-
     }
 
     @Override

@@ -14,6 +14,7 @@ import android.widget.ListView;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.UUID;
 
 import com.google.firebase.FirebaseApp;
 import com.google.firebase.database.DataSnapshot;
@@ -49,6 +50,16 @@ public class resultado extends AppCompatActivity {
             }
         });
         inicializarFireBase();
+
+        String nl = getIntent().getStringExtra(("nombrelibro"));
+        String na = getIntent().getStringExtra(("nombreautor"));
+
+        Libro libro = new Libro();
+        libro.setID(UUID.randomUUID().toString());
+        libro.setNombre(nl);
+        libro.setAutor(na);
+        databaseReference.child("Libro").child(libro.getID()).setValue(libro);
+
         listarDatos();
     }
 
