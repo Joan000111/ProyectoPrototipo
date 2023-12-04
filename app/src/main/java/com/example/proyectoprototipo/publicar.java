@@ -29,8 +29,8 @@ public class publicar extends AppCompatActivity {
         setContentView(R.layout.activity_publicar);
 
         //los valores aca
-        eTNombre=findViewById(R.id.ettitulo);
-        eTAutor=findViewById(R.id.etautor);
+        eTNombre = findViewById(R.id.ettitulo);
+        eTAutor = findViewById(R.id.etautor);
 
         volverabusqueda = findViewById(R.id.volver3);
         volverabusqueda.setOnClickListener(new View.OnClickListener() {
@@ -48,8 +48,8 @@ public class publicar extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent = new Intent(getApplicationContext(), busqueda.class);
 
-                String nlibro = eTNombre.toString();
-                String nautor = eTAutor.toString();
+                String nlibro = eTNombre.getText().toString();
+                String nautor = eTAutor.getText().toString();
 
                 intent.putExtra("nombrelibro", nlibro);
                 intent.putExtra("nombreautor", nautor);

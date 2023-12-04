@@ -141,6 +141,12 @@ public class busqueda extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getApplicationContext(), resultado.class);
+
+                String nl = getIntent().getStringExtra("nombrelibro");
+                String na = getIntent().getStringExtra("nombreautor");
+
+                intent.putExtra("nombrelibro", nl);
+                intent.putExtra("nombreautor", na);
                 startActivity(intent);
             }
         });

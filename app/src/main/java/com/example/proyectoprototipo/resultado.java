@@ -39,6 +39,8 @@ public class resultado extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_resultado);
 
+        inicializarFireBase();
+
         lvListadoLibros=findViewById(R.id.lista_libros);
 
         volverabusqueda = findViewById(R.id.bsalirderesultado);
@@ -49,18 +51,26 @@ public class resultado extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-        inicializarFireBase();
 
-        String nl = getIntent().getStringExtra(("nombrelibro"));
-        String na = getIntent().getStringExtra(("nombreautor"));
+        String nl = getIntent().getStringExtra("nombrelibro");
+        String na = getIntent().getStringExtra("nombreautor");
 
         Libro libro = new Libro();
-        libro.setID(UUID.randomUUID().toString());
-        libro.setNombre(nl);
-        libro.setAutor(na);
-        databaseReference.child("Libro").child(libro.getID()).setValue(libro);
 
-        listarDatos();
+
+        if (nl == "" || na == ""){
+            listarDatos();
+        }
+        else{
+            libro.setID(UUID.randomUUID().toString());
+            libro.setNombre(nl);
+            libro.setAutor(na);
+
+            databaseReference.child("Libro").child(libro.getID()).setValue(libro);
+            listarDatos();
+        }
+
+
     }
 
     private void listarDatos() {
