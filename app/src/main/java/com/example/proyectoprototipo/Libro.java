@@ -57,6 +57,12 @@ public class Libro {
 
     @Override
     public String toString() {
-        return nombre + " de " + autor;
+
+        if((nombre == "") || (autor == "")){
+            return "ingreso no válido";
+        }
+        else{
+            return nombre + " de " + autor;
+        }
     }
 }

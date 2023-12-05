@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "463801043234",
+    "project_id": "loginregisterprototipo",
+    "storage_bucket": "loginregisterprototipo.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:463801043234:android:ac3b54f9028474eade3d7b",
+        "android_client_info": {
+          "package_name": "com.example.proyectoprototipo"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDbWU2Og3iI1KSf6gNfOOc6VRP6pgmLyvw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
